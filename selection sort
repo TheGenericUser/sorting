@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int size, temp, index;
+    
+    cout << "Size of array: ";
+    cin >> size;
+    
+    int* arr = new int[size];
+    
+    for(int i = 0; i < size; i++){
+        cout << i<< ": ";
+        cin >> arr[i];
+    }
+    
+    for(int i = 0; i <size ; i++){
+        cout<<arr[i]<<"\n";
+    }
+    
+    cout<< "sorting...\n";
+    
+    for(int i = 0; i < size-1;i++){
+        index = i;
+        for(int j=i+1;j<size;j++){
+            if(arr[j]>arr[index]){
+                index = j;
+            }
+        }
+        temp = arr[index];
+        arr[index] = arr[i];
+        arr[i] = temp;
+    }
+    for(int i = 0; i <size ; i++){
+        cout<<arr[i]<<"\n";
+    }
+    
+    return 0;
+}
